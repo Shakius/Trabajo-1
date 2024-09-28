@@ -9,7 +9,7 @@ form.addEventListener('submit', async (e) => {
     const alumnos = document.getElementById('alumnos').value;
 
     // Enviar la materia al servidor (POST)
-    await fetch('/materias', {
+    const response = await fetch('http://localhost:3000/materias', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -17,13 +17,17 @@ form.addEventListener('submit', async (e) => {
         body: JSON.stringify({ materia, alumnos })
     });
 
-    // Recargar la tabla de materias
-    cargarMaterias();
+    if (response.ok) {
+        // Recargar la tabla de materias
+        cargarMaterias();
+    } else {
+        console.error('Error al crear la materia');
+    }
 });
 
 // Función para cargar todas las materias (GET)
 async function cargarMaterias() {
-    const res = await fetch('/materias');
+    const res = await fetch('http://localhost:3000/materias');
     const data = await res.json();
 
     // Limpiar la tabla
@@ -32,7 +36,7 @@ async function cargarMaterias() {
     // Llenar la tabla con las materias recibidas
     data.forEach(materia => {
         const row = document.createElement('tr');
-        row.innerHTML = <><td>${materia.materia}</td><td>${materia.alumnos}</td></>;
+        row.innerHTML = `<td>${materia.materia}</td><td>${materia.alumnos}</td>`;
         materiasTable.appendChild(row);
     });
 }
