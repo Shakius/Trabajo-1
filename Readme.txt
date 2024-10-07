@@ -1,0 +1,4 @@
+- Estaría bueno que al hacer el submit del formulario se limpien los campos para enviar nueva información.
+- No existe interfaz de usuario para el manejo de los endpoints para eliminar las materias.
+- Se debería manejar un identificador único para las materias, como por ejemplo un “ID”.
+- No adjunta documentación de pruebas. Tampoco está comentado el repositorio. Faltan las reflexiones.
