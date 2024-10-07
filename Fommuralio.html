@@ -3,34 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materias del ISTIC</title>
+    <title>Gestión de Materias</title>
     <link rel="stylesheet" href="styles.css">
-    
 </head>
 <body>
-    <h1>Ingreso de Materias</h1>
-    
+    <h1>Gestión de Materias</h1>
     <form id="materiaForm">
-        <label for="materia">Nombre de la Materia:</label><br>
-        <input type="text" id="materia" name="materia" required><br>
-        <label for="alumnos">Cantidad de Alumnos:</label><br>
-        <input type="number" id="alumnos" name="alumnos" required><br><br>
+        <input type="text" id="materia" placeholder="Nombre de la materia" required>
+        <input type="number" id="alumnos" placeholder="Cantidad de alumnos" required>
         <button type="submit">Agregar Materia</button>
     </form>
-
-    <h2>Listado de Materias</h2>
-    <table>
+    
+    <table id="materiasTable">
         <thead>
             <tr>
-                <th>Nombre</th>
-                <th>Cantidad de Alumnos</th>
+                <th>Materia</th>
+                <th>Alumnos</th>
+                <th>Acciones</th>
             </tr>
         </thead>
-        <tbody id="materiasTable">
-            <!-- Las materias aparecerán aquí -->
+        <tbody>
+            <!-- Las materias se agregarán aquí -->
         </tbody>
     </table>
 
-    <script src="Aplicacion.js"></script>
+    <script src="Applicacion.js"></script>
 </body>
 </html>
